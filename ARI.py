@@ -1,6 +1,6 @@
 #Proyecto:Asistente Reciclaje Inteligente (A.R.I)
 #Ultima Actualización:7:44AM 28/02/2019
-#Desarrolladores:Mateo Alonso Pabón,Juan David Correa, Juan Esteban Cortés, David Aguledo,Daniel Pineda
+#Desarrolladores:Mateo Alonso Pabón, Juan David Correa, Juan Esteban Cortés, David Agudelo, Daniel Pineda.
 #Imports BD,Arduino,SO
 import io
 import os
@@ -13,7 +13,7 @@ client = vision.ImageAnnotatorClient()
 #Conexión hacia el arduino
 ser = serial.Serial('COM6',9600)
 #Creación de conexion con BD mysql
-conexion1 = mysql.connector.connect(host="localhost",user="root",passwd="",database="bd_ari")
+conexion1 = mysql.connector.connect(host="localhost",user="root",passwd="mjjdd28022019",database="bd_ari")
 cursor1 = conexion1.cursor()
 
 #Apertura de la imagen para analizar
@@ -31,7 +31,7 @@ image = types.Image(content=content)
 response = client.label_detection(image=image)
 labels = response.label_annotations
 
-opcion = "3"
+opcionA = "3"
 #Ciclo listar labels de la imagen
 for label in labels:
     opcion = label.description
@@ -44,19 +44,19 @@ for label in labels:
         #Organico
         if(validar == 1):
             print('Orgánico')
-            opcion = "1"
+            opcionA = "1"
             ser.write(opcion.encode())
             break
         #Papel y cartón
         elif(validar == 2):
             print('Papel y cartón')
-            opcion = "2"
+            opcionA = "2"
             ser.write(opcion.encode())
             break
         #Plástico
         elif(validar == 3):
             print('Plástico')
-            opcion = "3"
+            opcionA = "3"
             ser.write(opcion.encode())
             break
         
