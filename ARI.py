@@ -1,5 +1,5 @@
 #Proyecto:Asistente Reciclaje Inteligente (A.R.I)
-#Ultima Actualización:7:44AM 28/02/2019
+#Ultima Actualización:10:27AM 28/02/2019
 #Desarrolladores:Mateo Alonso Pabón, Juan David Correa, Juan Esteban Cortés, David Agudelo, Daniel Pineda.
 #Imports BD,Arduino,SO
 import io
@@ -13,13 +13,13 @@ client = vision.ImageAnnotatorClient()
 #Conexión hacia el arduino
 ser = serial.Serial('COM6',9600)
 #Creación de conexion con BD mysql
-conexion1 = mysql.connector.connect(host="localhost",user="root",passwd="mjjdd28022019",database="bd_ari")
+conexion1 = mysql.connector.connect(host="AsistenteReciclajeInteligente.000webhostapp.com:3306",user="root",passwd="mjjdd28022019",database="id8851142_bd_ari")
 cursor1 = conexion1.cursor()
 
 #Apertura de la imagen para analizar
 file_name = os.path.join(
     os.path.dirname(__file__),
-    'botella.jpeg') 
+    'botella.jpeg')
 
 #Carga la imagen en memoria
 with io.open(file_name, 'rb') as image_file:
