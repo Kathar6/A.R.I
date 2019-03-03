@@ -1,2 +1,2 @@
 # A.R.I
-Asistente de Recicalje Inteligente
+Asistente de Reciclaje Inteligente
