@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="author" content="WB DataDic" />
-    <meta name="description" content="Diagram_ari Data Dictionary." />
-    <title>Diagram_ari Data Dictionary</title>
+    <meta name="description" content="bd_ari Data Dictionary." />
+    <title>bd_ari Data Dictionary</title>
     <style type="text/css">
     table{
         width: 100%;
@@ -51,9 +51,9 @@
 </head>
 <body>
 <div id="title-sect">
-<h1>Diagram_ari<br> Data Dictionay</h1>
+<h1>bd_ari<br> Data Dictionay</h1>
 <p>
-<em>2019-03-03</em>
+<em>2019-03-07</em>
 </p>
 <p class="proj-desc">
 <em></em>
@@ -61,12 +61,16 @@
 </div>
 <h2>Alphabetic Index</h2>
 <ul>
-<li><a href='#BASURA'>BASURA</a></li>
-<li><a href='#CATEGORIA'>CATEGORIA</a></li>
-<li><a href='#HISTORIAL'>HISTORIAL</a></li>
+<li><a href='#basura'>basura</a></li>
+<li><a href='#categoria'>categoria</a></li>
+<li><a href='#datocont'>datocont</a></li>
+<li><a href='#empresa'>empresa</a></li>
+<li><a href='#historial'>historial</a></li>
+<li><a href='#maquina'>maquina</a></li>
+<li><a href='#usuario'>usuario</a></li>
 </ul>
-<table id='BASURA'>
-<caption>BASURA</caption>
+<table id='basura'>
+<caption>basura</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
     <th>Column name</th>
@@ -82,23 +86,36 @@
     <th>Comment</th>
 </tr>
 <tr>
-    <td>id_basura</td>
-    <td>INT</td>
+    <td>idbasura</td>
+    <td>INT(11)</td>
+    <td>&#10004;</td>
     <td>&#10004;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
+    <td class='attr'>&nbsp;</td>
     <td></td>
     <td>ID y llave primaria de la basura</td>
 </tr>
 <tr>
-    <td>nom_basura</td>
+    <td>idcat</td>
+    <td>INT(11)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>ID de la categoria a la que pertenece la basura</td>
+</tr>
+<tr>
+    <td>nombasura</td>
     <td>VARCHAR(100)</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>&#10004;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -107,21 +124,8 @@
     <td></td>
     <td>Nombre de la basura</td>
 </tr>
-<tr>
-    <td>id_cat</td>
-    <td>INT</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>ID de la categoria a la cual pertenece la basura</td>
-</tr>
-<table id='CATEGORIA'>
-<caption>CATEGORIA</caption>
+<table id='categoria'>
+<caption>categoria</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
     <th>Column name</th>
@@ -137,8 +141,8 @@
     <th>Comment</th>
 </tr>
 <tr>
-    <td>id_cat</td>
-    <td>INT</td>
+    <td>idcat</td>
+    <td>INT(11)</td>
     <td>&#10004;</td>
     <td>&#10004;</td>
     <td>&nbsp;</td>
@@ -150,10 +154,10 @@
     <td>ID y llave primaria de la categoria</td>
 </tr>
 <tr>
-    <td>nombre_cat</td>
+    <td>nombrecat</td>
     <td>VARCHAR(100)</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>&#10004;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -162,8 +166,157 @@
     <td></td>
     <td>Nombre de la categoria</td>
 </tr>
-<table id='HISTORIAL'>
-<caption>HISTORIAL</caption>
+<table id='datocont'>
+<caption>datocont</caption>
+<tr><td colspan='11'>Tabla para los datos de contacto</td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>iddatocont</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td></td>
+    <td>ID del contacto</td>
+</tr>
+<tr>
+    <td>idempresa</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>ID de la empresa</td>
+</tr>
+<tr>
+    <td>cedula</td>
+    <td>VARCHAR(20)</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Cédula del usuario</td>
+</tr>
+<tr>
+    <td>email</td>
+    <td>VARCHAR(255)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Correo electrónico de contaco</td>
+</tr>
+<tr>
+    <td>telefono</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Télefonos de contaco</td>
+</tr>
+<tr>
+    <td>direccion</td>
+    <td>VARCHAR(255)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Ubicación de contacto</td>
+</tr>
+<table id='empresa'>
+<caption>empresa</caption>
+<tr><td colspan='11'>Tabla para registrar los datos de la empresa</td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>idempresa</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td></td>
+    <td>ID de la empresa </td>
+</tr>
+<tr>
+    <td>nombEmpresa</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Nombre de la empresa</td>
+</tr>
+<tr>
+    <td>website</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Sitio web de la empresa</td>
+</tr>
+<table id='historial'>
+<caption>historial</caption>
 <tr><td colspan='11'></td></tr>
 <tr>
     <th>Column name</th>
@@ -179,23 +332,23 @@
     <th>Comment</th>
 </tr>
 <tr>
-    <td>id_historial</td>
-    <td>INT</td>
+    <td>idhistorial</td>
+    <td>INT(11)</td>
     <td>&#10004;</td>
     <td>&#10004;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
+    <td>&#10004;</td>
     <td></td>
     <td>ID y llave primaria del historial</td>
 </tr>
 <tr>
-    <td>id_basura</td>
-    <td>INT</td>
+    <td>idbasura</td>
+    <td>INT(11)</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>&#10004;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -205,23 +358,36 @@
     <td>ID de la basura que ingresó</td>
 </tr>
 <tr>
-    <td>nom_basura</td>
-    <td>VARCHAR(100)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>idmaquina</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td>Nombre de la basura que ingresó</td>
+    <td>ID de la máquina que hace los historiales</td>
+</tr>
+<tr>
+    <td>nombasura</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Nombre de la basura que se ingresó</td>
 </tr>
 <tr>
     <td>fecha</td>
     <td>DATETIME</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>&#10004;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -232,9 +398,9 @@
 </tr>
 <tr>
     <td>cant</td>
-    <td>INT</td>
+    <td>INT(11)</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>&#10004;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -242,6 +408,207 @@
     <td class='attr'>&nbsp;</td>
     <td></td>
     <td>Cantidad de la basura que ingresó</td>
+</tr>
+<table id='maquina'>
+<caption>maquina</caption>
+<tr><td colspan='11'>Tabla para registrar los datos de cadamáquina</td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>idmaquina</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td></td>
+    <td>Numero de matricula de la máquina</td>
+</tr>
+<tr>
+    <td>idempresa</td>
+    <td>INT</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Id de la empresa a la cual pertenece la máquina</td>
+</tr>
+<tr>
+    <td>pesoOrg</td>
+    <td>DOUBLE</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Cantidad de basura orgánica que puede soportar</td>
+</tr>
+<tr>
+    <td>pesoPlast</td>
+    <td>DOUBLE</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Cantidad de basura plástica que puede soportar</td>
+</tr>
+<tr>
+    <td>pesoPapel</td>
+    <td>DOUBLE</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Cantidad de basura de papel y cartón que puede soportar</td>
+</tr>
+<tr>
+    <td>ubicacion</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Ubicación de la máquina</td>
+</tr>
+<tr>
+    <td>estado</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>'Activada'</td>
+    <td></td>
+</tr>
+<table id='usuario'>
+<caption>usuario</caption>
+<tr><td colspan='11'>Tabla para registrar cada usuario</td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>cedula</td>
+    <td>VARCHAR(20)</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Cédula del usuario</td>
+</tr>
+<tr>
+    <td>nombres</td>
+    <td>VARCHAR(50)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Nombre del usuario</td>
+</tr>
+<tr>
+    <td>apellidos</td>
+    <td>VARCHAR(50)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Apellidos del usuario</td>
+</tr>
+<tr>
+    <td>usuario</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Nickname de ingreso </td>
+</tr>
+<tr>
+    <td>passusua</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Contraseña de ingreso</td>
+</tr>
+<tr>
+    <td>estado</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>'Activo'</td>
+    <td>Estado del usuario</td>
 </tr>
 </table>
 </body>
