@@ -1,5 +1,6 @@
 *{
     font-family: 'Roboto', sans-serif;
+    font-size-adjust: inherit;
 }
 a{
     all:unset;
@@ -10,28 +11,73 @@ a:hover{
     color:#c8c8c8;
     cursor:pointer;
 }
+/*Cuerpo*/
 body{
     padding:0;
     margin:0;
-    
+    overflow:hidden;
 }
+/*Section*/
+section{
+    position: absolute;
+    top:6.3vh;
+    width:100vw;
+    height:93.65vh;
+    overflow-y:scroll;
+    overflow-x: hidden;
+    z-index: 1;
+}
+section::-webkit-scrollbar{
+    position: absolute;
+    width:.5vw;
+    background-color:#c8c8c8;
+    border-radius:1vw;
+}
+section::-webkit-scrollbar-thumb{
+    background-color:#7c7c7c;
+    border-radius:1vw;
+}
+/*Menu de la pagina*/
 .menu1{
     background-color:#008080;
     color:white;
 }
+
+/*Seccion principal*/
+.blq_1{
+    margin-top:25vh;
+    width:100vw;
+    height: 100vh;
+    z-index: 1;
+}
+.blq_principal{
+    opacity:.95;
+}
+.blq_transparente{
+    background-color:#c8c8c8;
+    opacity:0.5;
+}
+/*Video Prueba*/
 .v_ari{
     position: absolute;
-    left:0px;
-    top:7.5vh;
-    
+    left:0vw;
+    top:6.3vh;
+    width:100%;
+    padding:0;
 }
 .video_ari{
-    width:98.8vw;
-    z-index: 3;
+    width:100vw;
 }
-.blq_1{
-    position: absolute;
-    top:30vh;
-    left:0vw;
+/*Pie de Pagina*/
+.footer{
+    opacity:1;
+    padding-left:38vw;
     z-index: 1;
+}
+.imgGoogleMaps{
+    width:20vw;
+    height:15vh;
+}
+.icono{
+    font-size: 2em;
 }
