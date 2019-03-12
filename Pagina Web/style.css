@@ -1,3 +1,6 @@
+:root{
+    --color1:#008080;
+}
 *{
     font-family: 'Roboto', sans-serif;
     font-size-adjust: inherit;
@@ -23,7 +26,7 @@ section{
     top:6.3vh;
     width:100vw;
     height:93.65vh;
-    overflow-y:scroll;
+    overflow-y:auto;
     overflow-x: hidden;
     z-index: 1;
 }
@@ -39,19 +42,34 @@ section::-webkit-scrollbar-thumb{
 }
 /*Menu de la pagina*/
 .menu1{
-    background-color:#008080;
+    background-color:var(--color1);
     color:white;
 }
 
-/*Seccion principal*/
+/*Seccion principal inicio*/
 .blq_1{
     margin-top:25vh;
     width:100vw;
     height: 100vh;
     z-index: 1;
 }
-.blq_principal{
+/*Seccion principal login*/
+.blq_2{
+    margin-top:15vh;
+    width:100vw;
+    height: 78.7vh;
+    z-index: 1;
+}
+.blq_principal,.blq_login{
     opacity:.95;
+}
+@keyframes slideDown{
+    0% {top:-85vh;}
+    100% {top:0;}
+}
+.blq_login{
+    animation-name:slideDown;
+    animation-duration:.8s;
 }
 .blq_transparente{
     background-color:#c8c8c8;
@@ -59,7 +77,7 @@ section::-webkit-scrollbar-thumb{
 }
 /*Video Prueba*/
 .v_ari{
-    position: absolute;
+    position: fixed;
     left:0vw;
     top:6.3vh;
     width:100%;
@@ -80,4 +98,11 @@ section::-webkit-scrollbar-thumb{
 }
 .icono{
     font-size: 2em;
+}
+.btnIngresar,.btnCancelar{
+    background-color:var(--color1);
+}
+.LineaLogin{
+    float:left;
+    background-color:var(--color1);
 }
