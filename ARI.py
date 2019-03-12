@@ -60,7 +60,4 @@ for label in labels:
             ser.write(opcion.encode())
             break
         
-    
-
-
 cursor1.close()
