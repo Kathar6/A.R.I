@@ -1,0 +1,41 @@
+{
+  "name": "a.r.i",
+  "version": "0.6.4",
+  "description": "Pagina Web de un asistente de reciclaje inteligente.",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql": "^2.16.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start":"node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mate458/A.R.I.git"
+  },
+  "keywords": [
+    "reciclaje",
+    "ari",
+    "hardware",
+    "software",
+    "responsive",
+    "html5",
+    "css3",
+    "nodejs",
+    "javascript",
+    "react",
+    "medio",
+    "ambiente",
+    "git",
+    "github"
+  ],
+  "author": "a.r.i",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mate458/A.R.I/issues"
+  },
+  "homepage": "https://github.com/mate458/A.R.I#readme"
+}
