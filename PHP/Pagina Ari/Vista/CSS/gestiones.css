@@ -1,0 +1,289 @@
+
+:root{
+    --color1: #43a047;
+}
+*{
+    padding: 0px;
+    margin:0px;
+    font-family: 'Roboto', sans-serif;
+    font-size-adjust: inherit;
+
+}
+
+
+a{
+    all:unset;
+    transition:color,0.2s;
+    font-weight: bold;
+}
+a:hover{
+    color:#c8c8c8;
+    cursor:pointer;
+}
+body{
+    padding:0;
+    margin:0;
+    overflow: hidden;
+    background-color: #888787;
+    background-position : center; 
+    background-attachment : fixed; 
+}
+
+section{
+    width:100vw;
+    height:93.65vh;
+    overflow-y:auto;
+    overflow-x: hidden;
+}
+
+section::-webkit-scrollbar{
+    position: absolute;
+    width:.5vw;
+    background-color:#c8c8c8;
+    border-radius:1vw;
+}
+section::-webkit-scrollbar-thumb{
+    background-color:#7c7c7c;
+    border-radius:1vw;
+}
+
+@keyframes slideDown{
+    0% {top:-85vh;}
+    100% {top:0;}
+}
+@keyframes barraNav {
+    0%{opacity: 0}
+    100%{opacity: 1}
+}
+
+@keyframes barraNav2 {
+    0%{opacity: 1}
+    100%{opacity: 0}
+}
+
+.barraNav{
+    background-color:#343a40;
+    overflow: hidden;
+    margin: auto;
+    width: 100%;
+    align-content: center;
+    height: 50px;
+
+}
+
+ul,ol{
+    list-style: none;
+}
+
+.menuDesp li a{
+   
+    color:white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    
+}
+
+.menuDesp{
+    display:flex;
+    justify-content: center;
+}
+
+.menuDesp li a:hover{
+    color:#c8c8c8;
+    cursor:pointer;
+}
+.menuDesp li ul{
+    display:none;
+    position: absolute;
+    min-width: 140px;
+}
+
+.menuDesp li:hover > ul {
+    display: block;
+    background-color:#343A40;
+    border-radius:2%;
+    animation-name: barraNav;
+    animation-duration: .5s;
+}
+
+.menuDesp li::before > ul {
+    animation-name: barraNav2;
+    animation-duration: .5s;
+}
+
+.menuDesp li:hover > ul >li:hover {
+    background-color:rgb(45, 50, 54);
+}
+
+.tablagest{
+    
+    margin-top: 1rem;
+    margin-right: 11rem;
+    
+}
+
+.iconoTabla{
+    font-size: 1.5em;
+}
+
+.añadir{
+    position: relative;
+    top:7vh; left:96vw;
+
+}
+
+.añadir i:hover{
+    color:#c8c8c8;
+    cursor:pointer;
+}
+
+.iconoPlus{
+    color:white;
+    font-size: 1.5em;
+}
+
+.contenedorBus{
+    width: 200px;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+    top:1vh;
+    left:1vw;
+}
+
+.contenedorBus input#search{
+
+    height: 30px;
+    border: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+
+  .contenedorBus .icon{
+    outline: none;
+    border-style: none;
+    background-color: transparent;
+    position: absolute;
+    top: -13px;
+    right: 20px;
+    margin-left: 17px;
+    margin-top: 17px;
+    z-index: 1;
+    color: #4f5b66;
+  }
+.usuario{
+    position: absolute;
+    top:1vh;
+    right: 1vw;
+    color:white;
+}
+
+.ddmPerfil{
+    position: absolute;
+    left:16vw;
+    width:11vw;
+    
+} 
+
+.iconoDesp{
+    color:white;
+}
+
+.iconoUser{
+    font-size: 1.2em;
+    color:white;
+}
+
+.PanelReportes1{
+
+    margin:10rem;
+    width: 70%;
+    border-radius: 10px;
+    
+}
+
+.BotonesReportes{
+    position: relative;
+    left:40vw;
+}
+
+.btnReportes{
+    color:white;
+    background-color: var(--color1);
+}
+.btnExportar,.btnSubmit{
+    color:white;
+    background-color: var(--color1);
+}
+.blqBoton{
+    margin-left: 500px;
+}
+
+
+.alertas{
+    width: 30%;
+    position: relative;
+    top:3vh;
+}
+
+/*Ventana modal*/
+
+
+.modalDialog {
+    display:none;
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 400ms ;
+	-moz-transition: opacity 400ms ;
+	transition: opacity 400ms ;
+    pointer-events: none;
+}
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+.blq_modal{
+    overflow: auto;
+    width: 100%;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: #fff;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+}
+.close {
+	color: #c8c8c8;
+	line-height: 25px;
+	position: absolute;
+	right: 1vw;
+	text-align: center;
+	top: 1vh;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-moz-text-shadow: 1px 1px 3px #000;
+	-webkit-text-shadow: 1px 1px 3px #000;
+	text-shadow: 1px 1px 3px #000;
+}
+.close:hover { color: #000; }
+
+.deshabilitar{
+    display: none;
+}
+
+#BtnMostrar{
+    display: none;
+}

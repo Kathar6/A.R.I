@@ -1,0 +1,231 @@
+<!--
+    Pagina Web A.R.I
+    Pagina Contacto
+    Ultima Actualización:09/03/2019
+    Integrantes: Mateo Alonso Pabón García,David Agudelo,Juan David Correa García, Juan Esteban Cortés Goméz, Daniel Pineda
+-->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="../css/style2.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <link rel="icon" href="../img/LOGO.svg">
+    <title>A.R.I</title>
+</head>
+
+<body style="background-color:#fafafa;">
+
+    <!-- #region Ventana Modal-->
+    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="blq_modal pt-4 px-3">
+                    <div class="col text-center">
+                        <img src="../img/LOGO.svg" class="img-fluid" width="150" alt="">
+                    </div>
+                    <form action="../../Modelo/login.php" method="post" id="formLogin">
+                        <h2 class="text-center text-dark mt-3 ">Ingreso</h2>
+                        <hr>
+                        <div class="form-label-group">
+                            <input type="text" id="usuario" class="form-control" placeholder="NickName de Usuario"
+                                required autofocus>
+                            <label for="inputEmail">Usuario</label>
+                        </div>
+                        <div class="form-label-group">
+                            <input type="password" id="Password" class="form-control" placeholder="Password de Usuario"
+                                required>
+                            <label for="inputPassword">Contraseña</label>
+                        </div>
+
+                        <div class="form-group text-center">
+                            <input type="submit" value="Ingresar" class="btn btn-lg col-sm-6 btnIngresar text-white">
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div id="openModal" class="modalDialog">
+            <a href="" name="top"></a>
+            <div class="blq_modal pt-4">
+                <div class="col text-center">
+                    <img src="../../img/LOGO.svg" class="img-fluid" width="150" alt="">
+                </div>
+                <form action="/validar" method="post" id="formLogin">
+                    <h2 class="text-center text-dark mt-3 ">Ingreso</h2>
+                    <hr>
+                    <div class="form-label-group">
+                        <input type="text" id="usuario" class="form-control" placeholder="NickName de Usuario" required
+                            autofocus>
+                        <label for="inputEmail">Usuario</label>
+                    </div>
+                    <div class="form-label-group">
+                        <input type="password" id="Password" class="form-control" placeholder="Password de Usuario"
+                            required>
+                        <label for="inputPassword">Contraseña</label>
+                    </div>
+
+                    <div class="form-group text-center">
+                        <input type="submit" value="Ingresar" class="btn btn-lg col-sm-6 btnIngresar text-white">
+                        <button class="btn btn-lg col-sm-5 btn-danger">Cancelar</button>
+                    </div>
+
+                </form>
+            </div>
+    </div> -->
+    <!-- #endregion -->
+    <!-- #region Nav Menu-->
+    <nav class="container-fluid bg-dark menu1 text-white">
+        <ul class="nav float-right pt-1 pb-1 ">
+            <li class="nav-item">
+                <a href="index.html.php" class="nav-link">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a href="nosotros.html" class="nav-link">Nosotros</a>
+            </li>
+            <li class="nav-item">
+                <a href="contacto.html" class="nav-link">Contacto</a>
+            </li>
+            <li class="nav-item">
+                <a href="#openModal" class="nav-link btnAbrirModal" onclick="abrirModal()" data-toggle="modal"
+                    data-target=".bd-example-modal-sm">Ingresar</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- #endregion -->
+    <section>
+
+
+        <!-- #region Seccion principal contacto-->
+
+        <div class="container-fluid marketing pt-5 justify-content-center">
+            <div class="row justify-content-center">
+                <div class="col-sm-5 bg-light px-5">
+                    <h1 class="text-center">Solicitud</h1>
+                    <hr>
+                    <form action="" method="post">
+
+                        <div class="form-group">
+                            <label for="Rut">RUT</label>
+                            <input type="text" name="Rut" id="Rut" class="form-control" placeholder="Ingrese su RUT">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="Nempresa">Nombre de la empresa</label>
+                            <input type="text" name="Nempresa" id="Nempresa"
+                                placeholder="Ingrese el nombre de la empresa" class="form-control">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="Numero">Numero de contacto</label>
+                            <input type="text" name="Numero" id="Numero" class="form-control"
+                                placeholder="Ingrese numero de contacto">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="Website">Website</label>
+                            <input type="text" name="Website" id="Website" class="form-control"
+                                placeholder="Ingrese su website">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="Correo">Correo</label>
+                            <input type="Mail" name="Correo" id="Correo" class="form-control"
+                                placeholder="Ingrese su correo">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="Cuerpo">Razón de la solicitud</label>
+                            <textarea name="Cuerpo" id="Cuerpo" cols="20" rows="5"
+                                class="form-control txaCuerpo"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Enviar" class="form-control btn btnIngresar text-white">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <!-- Empresas que no patrocinan -->
+        <h1 class="text-center">Entidades que nos apoyan</h1>
+        <div class="row mt-3 mb-5">
+            <!--Aqui van la sección de los links-->
+            <div class="container mt-5 text-center">
+                <div class="row justify-content-center">
+                    <div class="col-sm-2">
+                        <img class="iconEmpresas img-thumbnail" src="../img/logoSena.png" alt="Foto empresa">
+                        <h5 class="mt-3">SENA</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- pie de pag-->
+
+        <footer>
+            <div class="container-fluid mt-5 pt-1 footer">
+                <div class="container-fluid">
+                    <div class="row p-5">
+                        <div class="col-sm-3 mx-auto">
+                            <h6 class=" font-weight-bold">INICIO</h6>
+                            <hr>
+                            <small>
+                                <a href="index.html.php#basurasTotales" class="font-weight-light">Basuras totales</a>
+                                <hr>
+                                <a href="index.html.php#maquinasTotales" class="font-weight-light">Máquinas totales</a>
+                                <hr>
+                                <a href="index.html.php#registroemp" class="font-weight-light">Registro de empresa</a>
+                                <hr>
+                                <a href="index.html.php#nuestroequipo" class="font-weight-light">Nuestro equipo</a>
+                                <hr>
+                                <a href="index.html.php#entidades" class="font-weight-light">Entidades asociadas</a>
+                            </small>
+                        </div>
+                        <div class="col-sm-3 mx-auto">
+                            <h6 class="font-weight-bold">INFORMACIÓN</h6>
+                            <hr>
+                            <small>
+                                <a href="Contacto.html" class="font-weight-light">Contacto</a>
+                                <hr>
+                                <a href="nosotros.html" class="font-weight-light">Nosotros</a>
+                                <hr>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid bg-dark">
+                <div class="row">
+                    <div class="col-sm-12 text-center text-white py-2">
+                        <i class="far fa-copyright"></i>A.R.I 2019
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--#endregion-->
+        <script src="../Funciones/script.js"></script>
+</body>
+
+</html>

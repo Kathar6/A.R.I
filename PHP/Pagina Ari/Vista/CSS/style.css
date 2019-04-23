@@ -1,0 +1,143 @@
+:root{
+    --color1:#008080;
+}
+*{
+    font-family: 'Roboto', sans-serif;
+    font-size-adjust: inherit;
+}
+a{
+    all:unset;
+    transition:color,0.2s;
+    font-weight: bold;
+}
+a:hover{
+    color:#c8c8c8;
+    cursor:pointer;
+}
+/*Cuerpo*/
+body{
+    padding:0;
+    margin:0;
+    overflow:hidden;
+    background-image: url("../img/aurora.jpg");
+    background-position : center; 
+    background-attachment : fixed; 
+}
+/*Section*/
+section{
+    position: absolute;
+    top:6.3vh;
+    width:100vw;
+    height:93.65vh;
+    overflow-y:auto;
+    overflow-x: hidden;
+    z-index: 1;
+}
+section::-webkit-scrollbar{
+    position: absolute;
+    width:.5vw;
+    background-color:#c8c8c8;
+    border-radius:1vw;
+}
+section::-webkit-scrollbar-thumb{
+    background-color:#7c7c7c;
+    border-radius:1vw;
+}
+/*Menu de la pagina*/
+.menu1{
+    background-color:var(--color1);
+    color:white;
+    z-index: 1;
+}
+.menu2{
+    z-index: 999;
+}
+
+/*Seccion principal inicio*/
+.blq_1{
+    margin-top:25vh;
+    width:100vw;
+    height: 100vh;
+    z-index: 1;
+}
+/*Seccion principal login*/
+.blq_2{
+    margin-top:15vh;
+    width:100vw;
+    height: 78.7vh;
+    z-index: 1;
+}
+.blq_principal,.blq_login{
+    opacity:.95;
+}
+@keyframes slideDown{
+    0% {top:-85vh;}
+    100% {top:0;}
+}
+.blq_login{
+    animation-name:slideDown;
+    animation-duration:.8s;
+}
+.blq_transparente{
+    background-color:#c8c8c8;
+    opacity:0.5;
+}
+/*Video Prueba*/
+.v_ari{
+    position: fixed;
+    left:0vw;
+    top:6.3vh;
+    width:100%;
+    padding:0;
+}
+.video_ari{
+    width:100vw;
+}
+/*Pie de Pagina*/
+.footer{
+    opacity:1;
+    padding-left:38vw;
+    z-index: 1;
+}
+.imgGoogleMaps{
+    width:20vw;
+    height:15vh;
+}
+.icono{
+    font-size: 10em;
+}
+.btnIngresar,.btnCancelar{
+    background-color:var(--color1);
+}
+.LineaLogin{
+    float:left;
+    background-color:var(--color1);
+}
+
+.usuario{
+    width: 300px;
+    height: 30px;
+    text-align: center;
+    padding: 3px;
+    position: absolute;
+    right:1vw; bottom:93vh;
+    z-index: 999;
+
+}
+.titulo{
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.barraSup{
+    background-color:var(--color1);
+}
+.barraInf{
+    background-color:var(--color1);
+    position: relative;
+    top:18vh;
+}
+
+
+
+
