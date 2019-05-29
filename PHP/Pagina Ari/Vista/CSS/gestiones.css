@@ -24,7 +24,7 @@ body{
     padding:0;
     margin:0;
     overflow: hidden;
-    background-color: #888787;
+    background-color:#fafafa;
     background-position : center; 
     background-attachment : fixed; 
 }
@@ -117,13 +117,14 @@ ul,ol{
 }
 
 .tablagest{
-    
+    background-color: #e6e6e6;
     margin-top: 1rem;
     margin-right: 11rem;
     
 }
 
 .iconoTabla{
+    color: #43a047;
     font-size: 1.5em;
 }
 
@@ -134,12 +135,12 @@ ul,ol{
 }
 
 .añadir i:hover{
-    color:#c8c8c8;
+    color:#388e3c;
     cursor:pointer;
 }
 
 .iconoPlus{
-    color:white;
+    color: #43a047;
     font-size: 1.5em;
 }
 
@@ -180,12 +181,6 @@ ul,ol{
     color:white;
 }
 
-.ddmPerfil{
-    position: absolute;
-    left:16vw;
-    width:11vw;
-    
-} 
 
 .iconoDesp{
     color:white;
@@ -197,7 +192,7 @@ ul,ol{
 }
 
 .PanelReportes1{
-
+    background-color: #e6e6e6;
     margin:10rem;
     width: 70%;
     border-radius: 10px;
@@ -227,6 +222,7 @@ ul,ol{
     position: relative;
     top:3vh;
 }
+
 
 /*Ventana modal*/
 
@@ -286,4 +282,53 @@ ul,ol{
 
 #BtnMostrar{
     display: none;
+}
+#trash{
+    position: absolute;
+    top: 84px;
+    right: 100px;
+	text-align: left;
+    font-size: 180px;
+}
+#recicle{
+    position: absolute;
+    top: 50px;
+    right: 100px;
+	text-align: left;
+    font-size: 180px;
+}
+#contac{
+    position: absolute;
+    top: 50px;
+    right: 100px;
+	text-align: left;
+    font-size: 130px;
+}
+#company{
+    position: absolute;
+    top: 50px;
+    right: 150px;
+	text-align: left;
+    font-size: 180px;
+}
+#machin{
+    position: absolute;
+    top: 90px;
+    right: 10px;
+	text-align: left;
+    font-size: 200px;
+}
+#user{
+    position: absolute;
+    top: 150px;
+    right: 150px;
+	text-align: left;
+    font-size: 200px; 
+}
+#userplus{
+    position: absolute;
+    bottom: 150px;
+    right: 70px;
+	text-align: left;
+    font-size: 200px; 
 }

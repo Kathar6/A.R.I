@@ -27,7 +27,7 @@ switch ($opcion) {
         $_SESSION["respuesta"] = $resp;
         $_SESSION["alerta"] = $alerta;
 
-        header("Location: ../Vista/HTML/GestionEmpresas.html.php");
+        header("Location: ../Vista/HTML/GestionEmpresas.php");
 
         
         break;
@@ -52,7 +52,7 @@ switch ($opcion) {
         $_SESSION["respuesta"] = $resp;
         $_SESSION["alerta"] = $alerta;
 
-        header("Location: ../Vista/HTML/GestionEmpresas.html.php");
+        header("Location: ../Vista/HTML/GestionEmpresas.php");
             
         break;
     case "eliminar":
@@ -71,7 +71,7 @@ switch ($opcion) {
         $_SESSION["respuesta"] = $resp;
         $_SESSION["alerta"] = $alerta;
 
-        header("Location: ../Vista/HTML/GestionEmpresas.html.php");
+        header("Location: ../Vista/HTML/GestionEmpresas.php");
 
 
 

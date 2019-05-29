@@ -33,7 +33,7 @@ switch ($opcion) {
         $_SESSION["respuesta"] = $resp;
         $_SESSION["alerta"] = $alerta;
 
-        header("Location: ../Vista/HTML/GestionContactos.html.php");
+        header("Location: ../Vista/HTML/GestionContactos.php");
 
         
         break;
@@ -63,7 +63,7 @@ switch ($opcion) {
         $_SESSION["respuesta"] = $resp;
         $_SESSION["alerta"] = $alerta;
 
-        header("Location: ../Vista/HTML/GestionContactos.html.php");
+        header("Location: ../Vista/HTML/GestionContactos.php");
             
         break;
     case "eliminar":
@@ -82,7 +82,7 @@ switch ($opcion) {
         $_SESSION["respuesta"] = $resp;
         $_SESSION["alerta"] = $alerta;
 
-        header("Location: ../Vista/HTML/GestionContactos.html.php");
+        header("Location: ../Vista/HTML/GestionContactos.php");
 
 
 

@@ -25,7 +25,7 @@ switch ($opcion) {
         $_SESSION["respuesta"] = $resp;
         $_SESSION["alerta"] = $alerta;
 
-        header("Location: ../Vista/HTML/GestionCategorias.html.php");
+        header("Location: ../Vista/HTML/GestionCategorias.php");
 
         
         break;
@@ -47,7 +47,7 @@ switch ($opcion) {
         $_SESSION["respuesta"] = $resp;
         $_SESSION["alerta"] = $alerta;
 
-        header("Location: ../Vista/HTML/GestionCategorias.html.php");
+        header("Location: ../Vista/HTML/GestionCategorias.php");
             
         break;
     case "eliminar":
@@ -66,7 +66,7 @@ switch ($opcion) {
         $_SESSION["respuesta"] = $resp;
         $_SESSION["alerta"] = $alerta;
 
-        header("Location: ../Vista/HTML/GestionCategorias.html.php");
+        header("Location: ../Vista/HTML/GestionCategorias.php");
 
 
 

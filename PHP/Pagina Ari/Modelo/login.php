@@ -22,9 +22,9 @@ $res = $pSqlQuery->get_result();
 if($res->num_rows == 1){
     session_start();
     $_SESSION['login'] = $res->fetch_row()[1];
-    header("Location: ../Vista/HTML/lobby.html.php");
+    header("Location: ../Vista/HTML/lobby.php");
 }else{
-    header("Location: ../Vista/HTML/index.html.php?error=true");
+    header("Location: ../Vista/HTML/index.php?error=true");
 }
 
 $conexion->closeConnection();

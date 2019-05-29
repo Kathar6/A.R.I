@@ -32,7 +32,7 @@ switch ($opcion) {
             $_SESSION["respuesta"] = $resp;
             $_SESSION["alerta"] = $alerta;
 
-            header("Location: ../Vista/HTML/GestionUsuarios.html.php");
+            header("Location: ../Vista/HTML/GestionUsuarios.php");
 
         } else {
             
@@ -41,7 +41,7 @@ switch ($opcion) {
             $_SESSION["respuesta"] = "Las contraseñas son inválidas";
             $_SESSION["alerta"] = "danger";
 
-            header("Location: ../Vista/HTML/GestionUsuarios.html.php");
+            header("Location: ../Vista/HTML/GestionUsuarios.php");
         }
 
         break;
@@ -59,7 +59,7 @@ switch ($opcion) {
             $_SESSION["respuesta"] = "El campo de usuario no puede ser actualizado";
             $_SESSION["alerta"] = "danger";
 
-            header("Location: ../Vista/HTML/GestionUsuarios.html.php");
+            header("Location: ../Vista/HTML/GestionUsuarios.php");
 
 
         } else {
@@ -80,7 +80,7 @@ switch ($opcion) {
                 $_SESSION["respuesta"] = $resp;
                 $_SESSION["alerta"] = $alerta;
 
-             header("Location: ../Vista/HTML/GestionUsuarios.html.php");
+             header("Location: ../Vista/HTML/GestionUsuarios.php");
                 
             } else {
 
@@ -89,7 +89,7 @@ switch ($opcion) {
                 $_SESSION["respuesta"] = "Las contraseñas son inválidas";
                 $_SESSION["alerta"] = "danger";
     
-                header("Location: ../Vista/HTML/GestionUsuarios.html.php");
+                header("Location: ../Vista/HTML/GestionUsuarios.php");
 
             }
         }
@@ -110,7 +110,7 @@ switch ($opcion) {
         $_SESSION["respuesta"] = $resp;
         $_SESSION["alerta"] = $alerta;
 
-        header("Location: ../Vista/HTML/GestionUsuarios.html.php");
+        header("Location: ../Vista/HTML/GestionUsuarios.php");
 
      
         break;

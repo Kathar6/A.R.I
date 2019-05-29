@@ -27,7 +27,7 @@ switch ($opcion) {
         $_SESSION["respuesta"] = $resp;
         $_SESSION["alerta"] = $alerta;
 
-        header("Location: ../Vista/HTML/GestionBasuras.html.php");
+        header("Location: ../Vista/HTML/GestionBasuras.php");
 
         
         break;
@@ -51,7 +51,7 @@ switch ($opcion) {
         $_SESSION["respuesta"] = $resp;
         $_SESSION["alerta"] = $alerta;
 
-        header("Location: ../Vista/HTML/GestionBasuras.html.php");
+        header("Location: ../Vista/HTML/GestionBasuras.php");
             
         break;
     case "eliminar":
@@ -70,7 +70,7 @@ switch ($opcion) {
         $_SESSION["respuesta"] = $resp;
         $_SESSION["alerta"] = $alerta;
 
-        header("Location: ../Vista/HTML/GestionBasuras.html.php");
+        header("Location: ../Vista/HTML/GestionBasuras.php");
 
 
 
