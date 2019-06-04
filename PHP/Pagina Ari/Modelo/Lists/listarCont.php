@@ -1,18 +1,23 @@
+<!-- Lista de la tabla Datoscont -->
 <?php
 
-
+//Incluimos nuestra conexión con la BD
 include_once("../../Modelo/Conexion/Connection.php");
+      
+//Se obtiene la conexión con la BD
+$conexion = new Connection();
+$mysqliC = $conexion->getConnection();
 
-        $conexion = new Connection();
-        $mysqliC = $conexion->getConnection();
+//Se prepara la sentencia parametrizada para traer la lista
+$pSqlQuery = $mysqliC->prepare("select * from bd_ari.datocont;");
 
-        $pSqlQuery = $mysqliC->prepare("select * from bd_ari.datocont;");
+//Se ejecuta la sentencia parametrizada
+$pSqlQuery->execute();
 
-        $pSqlQuery->execute();
+//Se obtienen los resultados de la sentencia
+$res = $pSqlQuery->get_result();
 
-        $res = $pSqlQuery->get_result();
-
-        return $res;
+//Se retorna la respuesta de la sentencia
+return $res;
         
-
 ?>

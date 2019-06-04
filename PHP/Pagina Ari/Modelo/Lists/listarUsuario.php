@@ -1,22 +1,29 @@
+<!-- Lista de la tabla Usuario -->
 <?php
 
+//Incluimos nuestra conexión con la BD
 include_once("../../Modelo/Conexion/Connection.php");
+            
+//Se obtiene la conexión con la BD
+$conexion = new Connection();
+$mysqliC = $conexion->getConnection();
 
+//Se crea una variable para traer sólo los usuarios activos
+$estado = 'Activo';
 
-            $conexion = new Connection();
-            $mysqliC = $conexion->getConnection();
+//Se prepara la sentencia parametrizada para traer la lista
+$pSqlQuery = $mysqliC->prepare("select cedula,nombres,apellidos,usuario from bd_ari.usuario where estado = ?;");
 
-            $estado = 'Activo';
+//Se manda el parámetro para traer sólo los usuarios activos
+$pSqlQuery->bind_param("s",$estado);
 
-            $pSqlQuery = $mysqliC->prepare("select cedula,nombres,apellidos,usuario from bd_ari.usuario where estado = ?;");
+//Se ejecuta la sentencia parametrizada
+$pSqlQuery->execute();
 
-            $pSqlQuery->bind_param("s",$estado);
+//Se obtienen los resultados de la sentencia
+$res = $pSqlQuery->get_result();
 
-            $pSqlQuery->execute();
-
-            $res = $pSqlQuery->get_result();
-
-            return $res;
+//Se retorna la respuesta de la sentencia
+return $res;
         
-
 ?>

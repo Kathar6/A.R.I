@@ -1,4 +1,7 @@
+<!-- Se crea el espacio para mostrar el ususario en el menú de navegación -->
 <?php
+
+//En caso de que la variable de sesión exista se mostrará el usuario que esté logeado
 if(isset($_SESSION['login'])){
     
     echo '<div class="row usuario">';
