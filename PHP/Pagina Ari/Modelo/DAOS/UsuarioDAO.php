@@ -1,11 +1,15 @@
+<!-- Clase para mapear y acceder a los datos de la tabla Usuario -->
 <?php
 
 
+//Incluimos nuestra conexión a la BD
 include_once("../Modelo/Conexion/Connection.php");
 
 class UsuarioDAO
 {
 
+    //Se mapean los atributos de la tabla junto con unas variables para la conexión,
+    //los mensajes que se devolverán y el tipo de alerta(succes o danger)
     private $ced;
     private $nom;
     private $apell;
@@ -16,19 +20,32 @@ class UsuarioDAO
     public $mensaje;
     public $alerta;
 
+    
+//Método para ejecutar el CRUD dependiendo de la opción que se mande
     public function ejecutarCRUD()
     {
 
+        
+        //Se obtiene la conexión con la BD
         $conexion = new Connection();
+
         $mysqliC = $conexion->getConnection();
 
+        //Se prepara la sentencia parametrizada para ejecutar el CRUD
         $pSqlQuery = $mysqliC->prepare("call bd_ari.CRUDUsuario(?,?,?,?,?,?);");
 
+        //Se mandan los paramátros a la sentencia parametrizada
         $pSqlQuery->bind_param("ssssss",$this->ced,$this->nom,$this->apell,$this->user,$this->pass,$this->opcion);
 
+        //Se ejecuta la sentencia parametrizada
         $pSqlQuery->execute();
 
+
+        //Se obtienen los resultados de la sentencia
         $res = $pSqlQuery->get_result();
+        //Condiciones para mostrar los mensajes y alertas dependiendo de cual opción se ejecutó 
+        //Si se trae más de un resultado se mostrará un mensaje y alerta de succes
+        //de lo contrario se traera el mensaje de error de la BD y se mostrará como alerta danger
         $opcionVal = $this->opcion;
 
         switch($opcionVal){
@@ -66,12 +83,14 @@ class UsuarioDAO
         }
 
        
+        //Se cierra la sentencia parametrizada
         $pSqlQuery->close();
+        //Se cierra la conexión con la BD
         $conexion->closeConnection();
     }
    
 
-    /* #region  */
+    /* #region Setters y Getters*/
     public function setCedula($cedula)
     {
         $this->ced = $cedula;

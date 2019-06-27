@@ -1,10 +1,13 @@
+<!-- Clase crear el reporte-->
 <?php
 
+//Incluimos nuestra conexión a la BD
 include_once("../Modelo/Conexion/Connection.php");
 
 class CrearReporte
 {
 
+    //Se mapean los atributos del reporte junto con unas variables para la conexión
     private $nomBas;
     private $nomCat;
     private $ubcMaq;
@@ -12,35 +15,46 @@ class CrearReporte
     private $fecha2;
     private $conexion;
 
-
+//Método para crear el reporte
     public function crearReporte()
     {
 
+        
+        //Se obtiene la conexión con la BD
         $conexion = new Connection();
+
         $mysqliC = $conexion->getConnection();
 
+        //Se prepara la sentencia parametrizada para crear el reporte
         $pSqlQuery = $mysqliC->prepare("call bd_ari.CrearReporte(?,?,?,?,?);");
 
 
+        //Se mandan los paramátros a la sentencia parametrizada
         $pSqlQuery->bind_param("sssss",$this->nomBas,$this->nomCat,$this->ubcMaq,$this->fecha1,$this->fecha2);
 
         
 
+        //Se ejecuta la sentencia parametrizada
         $pSqlQuery->execute();
 
+
+        //Se obtienen los resultados de la sentencia
         $res = $pSqlQuery->get_result();
        
         
 
+        //Se cierra la sentencia parametrizada
         $pSqlQuery->close();
+        //Se cierra la conexión con la BD
         $conexion->closeConnection();
 
+        //Se retorna la respuesta de la sentencia
         return $res;
     }
     
 
 
-    /* #region  */
+    /* #region Setters y Getters*/
     public function setNomBas($nom)
     {
         $this->nomBas = $nom;

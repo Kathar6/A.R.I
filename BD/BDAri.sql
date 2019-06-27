@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `bd_ari` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */;
+USE `bd_ari`;
 -- MySQL dump 10.13  Distrib 8.0.15, for Win64 (x86_64)
 --
 -- Host: localhost    Database: bd_ari
@@ -29,7 +31,7 @@ CREATE TABLE `basura` (
   PRIMARY KEY (`idbasura`),
   KEY `fk_id_cat` (`idcat`),
   CONSTRAINT `fk_id_cat` FOREIGN KEY (`idcat`) REFERENCES `categoria` (`idcat`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1 COMMENT='Tabla para registrar las basuras';
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1 COMMENT='Tabla para registrar las basuras';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +40,7 @@ CREATE TABLE `basura` (
 
 LOCK TABLES `basura` WRITE;
 /*!40000 ALTER TABLE `basura` DISABLE KEYS */;
-INSERT INTO `basura` VALUES (1,3,'Plastic Bottle'),(2,3,'Water Bottle'),(3,3,'Bottle'),(4,3,'Plastic'),(5,3,'Drinkware'),(6,3,'Spoon'),(7,3,'Dishware'),(8,3,'Cutlery'),(9,3,'Potato Chip'),(10,2,'Napkin'),(11,2,'Paper'),(12,2,'Paper Product'),(13,1,'Apple'),(14,1,'Fruit'),(15,1,'Food'),(16,1,'Banana'),(17,2,'Paper Bag'),(18,3,'Drink'),(19,1,'PineApple'),(20,3,'frijoles'),(21,3,'Botella');
+INSERT INTO `basura` VALUES (1,3,'Plastic Bottle'),(2,3,'Water Bottle'),(3,3,'Bottle'),(4,3,'Plastic'),(5,3,'Drinkware'),(6,3,'Spoon'),(7,3,'Dishware'),(8,3,'Cutlery'),(10,2,'Napkin'),(11,2,'Paper'),(12,2,'Paper Product'),(14,1,'Fruit'),(15,1,'Food'),(16,1,'Banana'),(17,2,'Paper Bag'),(19,1,'PineApple'),(21,3,'Botella'),(23,1,'Piña'),(24,1,'Potato chip');
 /*!40000 ALTER TABLE `basura` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -208,7 +210,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES ('1','1','1','1','40bd001563085fc35165329ea1ff5c5ecbdbbeef','Inactivo'),('1000089139','Mateo Alonso','Pabón Garcia','mpabon','1234','Activo'),('1000533072','Juan Esteban','Cortés Gómez','jcortes','21e258feeda0a1d9c794088b7d59d51d1ed760d9','Activo'),('1048264545','Daniel David','Pineda Beltran','ElCoste','f700a6934e78cd908cb5665cd84f89318bfa2d43','Activo'),('1193115426','David','Agudelo Valencia','dagudelo','1234','Activo'),('12','12','12','12','7b52009b64fd0a2a49e6d8a939753077792b0554','Inactivo'),('1216729104','Juan David','Correa Garcia','jcorrea','1234','Activo'),('123','12334','123','123','da39a3ee5e6b4b0d3255bfef95601890afd80709','Inactivo');
+INSERT INTO `usuario` VALUES ('1','1','1','1','40bd001563085fc35165329ea1ff5c5ecbdbbeef','Inactivo'),('1000089139','Mateo Alonso','Pabón Garcia','mpabon','1234','Activo'),('1000533072','Juan Esteban','Cortés Gómez','jcortes','21e258feeda0a1d9c794088b7d59d51d1ed760d9','Activo'),('1048264545','Daniel David','Pineda Beltran','ElCoste','f700a6934e78cd908cb5665cd84f89318bfa2d43','Activo'),('11223','Alex ','Ubago','aubago','2659fc7be995b25502c724bac742958d9607484c','Activo'),('1193115426','David','Agudelo Valencia','dagudelo','1234','Activo'),('12','12','12','12','7b52009b64fd0a2a49e6d8a939753077792b0554','Inactivo'),('1216729104','Juan David','Correa Garcia','jcorrea','1234','Activo'),('123','12334','123','123','da39a3ee5e6b4b0d3255bfef95601890afd80709','Inactivo');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -753,4 +755,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-01  3:02:39
+-- Dump completed on 2019-05-29 22:40:58
