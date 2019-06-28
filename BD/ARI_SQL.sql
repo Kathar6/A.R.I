@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `bd_ari` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */;
-USE `bd_ari`;
 -- MySQL dump 10.13  Distrib 8.0.15, for Win64 (x86_64)
 --
 -- Host: localhost    Database: bd_ari
@@ -30,7 +28,7 @@ CREATE TABLE `basura` (
   `nombasura` varchar(100) NOT NULL COMMENT 'Nombre de la basura',
   PRIMARY KEY (`idbasura`),
   KEY `fk_id_cat` (`idcat`),
-  CONSTRAINT `fk_id_cat` FOREIGN KEY (`idcat`) REFERENCES `categoria` (`idcat`)
+  CONSTRAINT `fk_id_cat` FOREIGN KEY (`idcat`) REFERENCES `categoria` (`idcat`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1 COMMENT='Tabla para registrar las basuras';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -40,7 +38,7 @@ CREATE TABLE `basura` (
 
 LOCK TABLES `basura` WRITE;
 /*!40000 ALTER TABLE `basura` DISABLE KEYS */;
-INSERT INTO `basura` VALUES (1,3,'Plastic Bottle'),(2,3,'Water Bottle'),(3,3,'Bottle'),(4,3,'Plastic'),(5,3,'Drinkware'),(6,3,'Spoon'),(7,3,'Dishware'),(8,3,'Cutlery'),(10,2,'Napkin'),(11,2,'Paper'),(12,2,'Paper Product'),(14,1,'Fruit'),(15,1,'Food'),(16,1,'Banana'),(17,2,'Paper Bag'),(19,1,'PineApple'),(21,3,'Botella'),(23,1,'Piña'),(24,1,'Potato chip');
+INSERT INTO `basura` VALUES (1,3,'Plastic Bottle'),(2,3,'Water Bottle'),(3,3,'Bottle'),(4,3,'Plastic'),(5,3,'Drinkware'),(6,3,'Spoon'),(7,3,'Dishware'),(8,3,'Cutlery'),(10,2,'Napkin'),(11,2,'Paper'),(12,2,'Paper Product'),(14,1,'Fruit'),(15,1,'Food'),(16,1,'Banana'),(17,2,'Paper Bag'),(19,1,'PineApple'),(23,1,'Piña'),(24,1,'Potato chip');
 /*!40000 ALTER TABLE `basura` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -85,7 +83,8 @@ CREATE TABLE `datocont` (
   PRIMARY KEY (`iddatocont`,`idempresa`,`cedula`),
   KEY `fk_datocont_empresa1_idx` (`idempresa`),
   KEY `fk_datocont_usuario1_idx` (`cedula`),
-  CONSTRAINT `fk_datocont_usuario1` FOREIGN KEY (`cedula`) REFERENCES `usuario` (`cedula`)
+  CONSTRAINT `fk_datocont_empresa` FOREIGN KEY (`idempresa`) REFERENCES `empresa` (`idempresa`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_datocont_usuario1` FOREIGN KEY (`cedula`) REFERENCES `usuario` (`cedula`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tabla para los datos de contacto';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -141,8 +140,8 @@ CREATE TABLE `historial` (
   PRIMARY KEY (`idhistorial`,`idmaquina`),
   KEY `fk_id_basura` (`idbasura`),
   KEY `fk_historial_maquina1_idx` (`idmaquina`),
-  CONSTRAINT `fk_historial_maquina1` FOREIGN KEY (`idmaquina`) REFERENCES `maquina` (`idmaquina`),
-  CONSTRAINT `fk_id_basura` FOREIGN KEY (`idbasura`) REFERENCES `basura` (`idbasura`)
+  CONSTRAINT `fk_historial_maquina1` FOREIGN KEY (`idmaquina`) REFERENCES `maquina` (`idmaquina`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_id_basura` FOREIGN KEY (`idbasura`) REFERENCES `basura` (`idbasura`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1 COMMENT='Tabla para registrar los historiales';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -152,7 +151,7 @@ CREATE TABLE `historial` (
 
 LOCK TABLES `historial` WRITE;
 /*!40000 ALTER TABLE `historial` DISABLE KEYS */;
-INSERT INTO `historial` VALUES (1,3,1,'Bottle','2019-02-28 08:15:03',1),(2,1,1,'Plastic Bottle','2019-02-28 08:16:00',1),(3,1,2,'Plastic Bottle','2019-02-28 08:17:16',1),(4,3,3,'Bottle','2019-04-01 00:34:38',1),(5,14,2,'Fruit','2019-04-01 01:10:30',1),(6,15,3,'Food','2019-04-01 01:10:57',1),(7,10,4,'Napkin','2019-04-01 01:11:35',1),(8,11,5,'Paper','2019-04-01 01:11:56',1),(9,21,1,'Botella','2019-04-01 01:17:28',1),(10,3,5,'Bottle','2019-04-01 01:18:15',1);
+INSERT INTO `historial` VALUES (1,3,1,'Bottle','2019-02-28 08:15:03',1),(2,1,1,'Plastic Bottle','2019-02-28 08:16:00',1),(3,1,2,'Plastic Bottle','2019-02-28 08:17:16',1),(4,3,3,'Bottle','2019-04-01 00:34:38',1),(5,14,2,'Fruit','2019-04-01 01:10:30',1),(6,15,3,'Food','2019-04-01 01:10:57',1),(7,10,4,'Napkin','2019-04-01 01:11:35',1),(8,11,5,'Paper','2019-04-01 01:11:56',1),(10,3,5,'Bottle','2019-04-01 01:18:15',1);
 /*!40000 ALTER TABLE `historial` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -172,7 +171,8 @@ CREATE TABLE `maquina` (
   `ubicacion` varchar(45) NOT NULL COMMENT 'Ubicación de la máquina',
   `estado` varchar(45) NOT NULL DEFAULT 'Activada',
   PRIMARY KEY (`idmaquina`,`idempresa`),
-  KEY `fk_maquina_empresa1_idx` (`idempresa`)
+  KEY `fk_maquina_empresa1_idx` (`idempresa`),
+  CONSTRAINT `fk_maquina_empresa` FOREIGN KEY (`idempresa`) REFERENCES `empresa` (`idempresa`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tabla para registrar los datos de cadamáquina';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -755,4 +755,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-29 22:40:58
+-- Dump completed on 2019-06-27 20:08:04
