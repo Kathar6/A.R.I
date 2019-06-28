@@ -137,6 +137,12 @@ function buscar(){
     }
 }
 
+//Función para habilitar el campo de Cedula al momento de enviar el formulario
+function validar(){
+    var inputCedula = document.getElementById('Cedula');
+    inputCedula.disabled = false;
+}
+
 //Función para limpiar todos los campos
 function limpiarInputs(){
     var inputIdCon = document.getElementById('IdCon');
@@ -162,6 +168,7 @@ function limpiarInputs(){
     
 }
 
+//Función para seleccionar la opción de empresa o usuario
 function seleccionar(){
 
     limpiarInputs();

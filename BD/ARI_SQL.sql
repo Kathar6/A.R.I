@@ -85,7 +85,7 @@ CREATE TABLE `datocont` (
   KEY `fk_datocont_usuario1_idx` (`cedula`),
   CONSTRAINT `fk_datocont_empresa` FOREIGN KEY (`idempresa`) REFERENCES `empresa` (`idempresa`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_datocont_usuario1` FOREIGN KEY (`cedula`) REFERENCES `usuario` (`cedula`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tabla para los datos de contacto';
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tabla para los datos de contacto';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -94,7 +94,7 @@ CREATE TABLE `datocont` (
 
 LOCK TABLES `datocont` WRITE;
 /*!40000 ALTER TABLE `datocont` DISABLE KEYS */;
-INSERT INTO `datocont` VALUES (1,'1000533072','1000533072','ariproyecto@gmail.com','4522492','Cr 89 #65-40'),(2,'1000533072','1216729104','juandacoga12@gmail.com','5052239','Cr 56 #54-60'),(3,'1000533072','1000089139','matepabon@gmail.com','5859944','Cr 44 #34-50'),(4,'1000533072','1048264545','danielp_55@hotmail.com','5964077','Cr 56 #12-16'),(5,'1000533072','1193115426','david.agudelo.valencia@gmail.com','3046710563','Cr 10 #89-10'),(6,'1000533072','1000533072','juancortesg1204@gmail.com','3005082697','Cr 61 #44-40'),(7,'1000533072','1048264545','peppapig@ejemplo.com','4680874','carrera 40 pepa#34');
+INSERT INTO `datocont` VALUES (1,'1000533072','1000533072','ariproyecto@gmail.com','4522492','Cr 89 #65-40'),(3,'1000533072','1000089139','matepabon@gmail.com','5859944','Cr 44 #34-50'),(4,'1000533072','1048264545','danielp_55@hotmail.com','5964077','Cr 56 #12-16'),(5,'1000533072','1193115426','david.agudelo.valencia@gmail.com','3046710563','Cr 10 #89-10'),(6,'1000533072','1000533072','juancortesg1204@gmail.com','3005082697','Cr 61 #44-40'),(7,'1000533072','1048264545','peppapig@ejemplo.com','4680874','carrera 40 pepa#34'),(8,'1000533072','123','andresramirez@gmail.com','4356789','Cr 13#17-65');
 /*!40000 ALTER TABLE `datocont` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -173,7 +173,7 @@ CREATE TABLE `maquina` (
   PRIMARY KEY (`idmaquina`,`idempresa`),
   KEY `fk_maquina_empresa1_idx` (`idempresa`),
   CONSTRAINT `fk_maquina_empresa` FOREIGN KEY (`idempresa`) REFERENCES `empresa` (`idempresa`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tabla para registrar los datos de cadamáquina';
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tabla para registrar los datos de cadamáquina';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -182,7 +182,7 @@ CREATE TABLE `maquina` (
 
 LOCK TABLES `maquina` WRITE;
 /*!40000 ALTER TABLE `maquina` DISABLE KEYS */;
-INSERT INTO `maquina` VALUES (1,'1000533072',50.5,35.5,20.5,'Medellin-Puerta del norte','Inactivada'),(2,'1000533072',50.5,40.5,22.5,'Medellin-EPM','Inactivada'),(3,'1000533072',28,43,41,'SURA','Inactivada'),(4,'1000533072',45,45,45,'EPM','Inactivada'),(5,'1000533072',458,45,45,'EPM','Activada'),(6,'1000533072',45,45,45,'SURA','Activada');
+INSERT INTO `maquina` VALUES (1,'1000533072',50.5,35.5,20.5,'Medellin-Puerta del norte','Inactivada'),(2,'1000533072',50.5,40.5,22.5,'Medellin-EPM','Inactivada'),(3,'1000533072',28,43,41,'SURA','Inactivada'),(4,'1000533072',45,45,45,'EPM','Inactivada'),(5,'1000533072',458,45,45,'EPM','Activada'),(6,'1000533072',45,45,45,'SURA','Activada'),(7,'1000533072',89,45,45,'SENA2','Inactivada');
 /*!40000 ALTER TABLE `maquina` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -210,7 +210,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES ('1','1','1','1','40bd001563085fc35165329ea1ff5c5ecbdbbeef','Inactivo'),('1000089139','Mateo Alonso','Pabón Garcia','mpabon','1234','Activo'),('1000533072','Juan Esteban','Cortés Gómez','jcortes','21e258feeda0a1d9c794088b7d59d51d1ed760d9','Activo'),('1048264545','Daniel David','Pineda Beltran','ElCoste','f700a6934e78cd908cb5665cd84f89318bfa2d43','Activo'),('11223','Alex ','Ubago','aubago','2659fc7be995b25502c724bac742958d9607484c','Activo'),('1193115426','David','Agudelo Valencia','dagudelo','1234','Activo'),('12','12','12','12','7b52009b64fd0a2a49e6d8a939753077792b0554','Inactivo'),('1216729104','Juan David','Correa Garcia','jcorrea','1234','Activo'),('123','12334','123','123','da39a3ee5e6b4b0d3255bfef95601890afd80709','Inactivo');
+INSERT INTO `usuario` VALUES ('1000089139','Mateo Alonso','Pabón Garcia','mpabon','1234','Activo'),('1000533072','Juan Esteban','Cortés Gómez','jcortes','21e258feeda0a1d9c794088b7d59d51d1ed760d9','Activo'),('1048264545','Daniel David','Pineda Beltran','ElCoste','f700a6934e78cd908cb5665cd84f89318bfa2d43','Activo'),('11223','Alex ','Ubago','aubago','2659fc7be995b25502c724bac742958d9607484c','Activo'),('1193115426','David','Agudelo Valencia','dagudelo','1234','Activo'),('123','Andres','Ramirez','AndresR','8235ce83be27773ae1cc4cddfa5b3657751eb26d','Activo');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -620,7 +620,7 @@ when boton='guardar' then
 if @cedula = cedulaU && @estadoActual != 'Inactivo' then
 	select concat('El usuario con cédula ',cedulaU,' ya se encuentra registrado') as MensajeCedula;
 else
-	if @userVal = 1 then
+	if @userVal = 1 && @estadoActual = 'Activo' then
 		select concat('El usuario ya se encuentra registrado, por favor ingrese un usuario diferente') as MensajeVal;
 	else
     if @estadoActual = 'Inactivo' then 
@@ -755,4 +755,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-06-27 20:08:04
+-- Dump completed on 2019-06-27 22:00:08

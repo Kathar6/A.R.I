@@ -170,6 +170,9 @@ function limpiarInputs(){
     var inputUser = document.getElementById('Usuario');
     var inputContraseña = document.getElementById('Contraseña');
     var inputConfirmar = document.getElementById('Confirmar');
+    var inputEmail = document.getElementById('Email');
+    var inputTel = document.getElementById('Tel');
+    var inputDir = document.getElementById('Dir');
 
     inputCed.value = "";
     inputNombres.value = "";
@@ -177,4 +180,7 @@ function limpiarInputs(){
     inputUser.value = "";
     inputContraseña.value = "";
     inputConfirmar.value = "";
+    inputEmail.value = "";
+    inputTel.value = "";
+    inputDir.value = "";
 }

@@ -216,7 +216,7 @@ include "../../Controlador/validar.php";
                 </div>
 
                 <div class="modal-footer">
-                  <input type="submit" id="btnSubmit" class="btn btnSubmit">
+                  <input type="submit" id="btnSubmit" class="btn btnSubmit" onclick="validar()">
                   <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                 </div>
 

@@ -6,8 +6,12 @@ de la opción que se mande -->
 //Se incluye el DAO correspondiente
 include "../Modelo/DAOS/UsuarioDAO.php";
 
+//Se incluye el DAO de contacto
+include "../Modelo/DAOS/ContactoDAO.php";
+
 //Instanciamos la clase del DAO
 $dao = new UsuarioDAO();
+$daoCon = new ContactoDAO();
 
 //Obtenemos la opción que se requiere ejecutar
 $opcion = $_POST['Opcion'];
@@ -16,16 +20,25 @@ switch ($opcion) {
     case "guardar":
 
         //Se obtienen los datos mandados por el formulario
-        $ced = $_POST['Cedula'];
+        $ced = $_POST['cedula'];
         $nom = $_POST['Nombres'];
         $apell = $_POST['Apellidos'];
         $user = $_POST['Usuario'];
         $pass = $_POST['Contraseña'];
         $passConf = $_POST['Confirmar'];
 
+        //Se obtienen los datos para el contacto mandados por el formulario
+        $idCon = "";
+        $idEmp = "";
+        $email = $_POST['email'];
+        $tel = $_POST['tel'];
+        $dir = $_POST['dir'];
+
+
     //Se hace una condición para verificar que la contraseña y la confirmación sean iguales
     //De ser correcto se procede a guardar al usuario en la BD
     if ($pass == $passConf) {
+
 
             //Se mandan los datos obtenidos al DAO
             $dao->setCedula($ced);
@@ -49,6 +62,23 @@ switch ($opcion) {
             $_SESSION["respuesta"] = $resp;
             $_SESSION["alerta"] = $alerta;
 
+            if($email != '' || $tel != '' || $dir != ''){
+
+                print("Guardando contacto");
+
+                //Se mandan los datos obtenidos al DAO
+                $daoCon->setIdCont($idCon);
+                $daoCon->setIdEmp($idEmp);
+                $daoCon->setCedU($ced);
+                $daoCon->setEmail($email);
+                $daoCon->setTel($tel);
+                $daoCon->setDir($dir);
+                $daoCon->setOpcion($opcion);
+
+                //Se ejecuta el CRUD
+                $daoCon->ejecutarCRUD();
+            }
+
             //Se redigire a la página de gestión correspondiente
             header("Location: ../Vista/views/GestionUsuarios.php");
         
@@ -70,7 +100,7 @@ switch ($opcion) {
     case "actualizar":
 
         //Se obtienen los datos mandados por el formulario
-        $ced = $_POST['Cedula'];
+        $ced = $_POST['cedula'];
         $nom = $_POST['Nombres'];
         $apell = $_POST['Apellidos'];
         $pass = $_POST['Contraseña'];
@@ -141,7 +171,7 @@ switch ($opcion) {
     case "eliminar":
         
         //Se obtienen los datos mandados por el formulario
-        $ced = $_POST['Cedula'];
+        $ced = $_POST['cedula'];
 
         //Se mandan los datos obtenidos al DAO
         $dao->setCedula($ced);

@@ -170,7 +170,7 @@ include "../../Controlador/validar.php";
                     <label>Cédula:</label>
                   </div>
                   <div class="col-sm-2">
-                    <input type="text" name="Cedula" id="Cedula" class="form-control campos" required>
+                    <input type="text" name="cedula" id="Cedula" class="form-control campos" required>
                   </div>
                 </div>
                 <div class="form-row ml-5 mt-5 mb-5">
@@ -222,7 +222,7 @@ include "../../Controlador/validar.php";
                       <label>E-mail:</label>
                     </div>
                     <div class="col-sm-3">
-                      <input type="text" class="form-control campos">
+                      <input type="text" id="Email" name="email" class="form-control campos">
                     </div>
 
                   </div>
@@ -231,7 +231,7 @@ include "../../Controlador/validar.php";
                       <label>Teléfono:</label>
                     </div>
                     <div class="col-sm-3">
-                      <input type="text" class="form-control campos">
+                      <input type="text" id="Tel" name="tel" class="form-control campos">
                     </div>
                   </div>
                   <div class="form-row ml-5 mt-5 mb-5">
@@ -239,7 +239,7 @@ include "../../Controlador/validar.php";
                       <label>Dirección:</label>
                     </div>
                     <div class="col-sm-3 mr-5">
-                      <input type="text" class="form-control campos">
+                      <input type="text" id="Dir" name="dir" class="form-control campos">
                     </div>
                   </div>
                 </div>
