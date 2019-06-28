@@ -1,4 +1,3 @@
-<!-- Genera el PDF del reporte -->
 <?php
 
 //Se requiere la librería necesaria para generar el PDF
