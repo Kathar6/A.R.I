@@ -11,9 +11,9 @@ from google.cloud import vision
 from google.cloud.vision import types
 client = vision.ImageAnnotatorClient()
 #Conexión hacia el arduino
-#ser = serial.Serial('COM6',9600)
+ser = serial.Serial('COM6',9600)
 #Creación de conexion con BD mysql
-conexion1 = mysql.connector.connect(host="AsistenteReciclajeInteligente.000webhostapp.com",user="root",passwd="mjjdd28022019",database="id8851142_bd_ari")
+conexion1 = mysql.connector.connect(host="host",user="root",passwd="root",database="bd_ari")
 cursor1 = conexion1.cursor()
 
 #Apertura de la imagen para analizar
@@ -35,29 +35,34 @@ labels = response.label_annotations
 #Ciclo listar labels de la imagen
 for label in labels:
     opcion = label.description
-    #Consulta de categoria a la BD 
-    sqlcomando = "select id_cat from basura where nom_basura = '" + format(opcion) + "'"
+    # Consulta de categoría a la bd
+    sqlcomando = "select idcat from basura where nombasura = '" + format(opcion) + "'"
+   
     cursor1.execute(sqlcomando)
     result = cursor1.fetchone()
     if result is not None:
         validar = result[0]
-        #Organico
         if(validar == 1):
             print('Orgánico')
-            #opcionA = "1"
-            ser.write(opcion.encode())
+            opcionA = "1" 
+            input()  
+            
             break
-        #Papel y cartón
+
         elif(validar == 2):
             print('Papel y cartón')
-            #opcionA = "2"
-            ser.write(opcion.encode())
-            break
-        #Plástico
-        elif(validar == 3):
-            print('Plástico')
-            #opcionA = "3"
-            ser.write(opcion.encode())
+            opcionA = "2"
+            input()
+           
             break
         
+        elif(validar == 3):
+            print('Plástico')
+            opcionA = "3"
+           
+            input()
+            break
+
+ser.write(opcionA.encode())
+
 cursor1.close()
