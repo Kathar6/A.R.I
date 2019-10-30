@@ -15,8 +15,8 @@ private $conexion;
 //Se setean los atributos para realizar la conexión con la BD. Aquí se deben cambiar los valores
 //para realizar una conexión a otro servidor
 public function __construct(){
-    $this->user = "equipoARI";
-    $this->pass = "ari12345";
+    $this->user = "user";
+    $this->pass = "pass";
     $this->server = "localhost";
     $this->baseD = "bd_ari";
 }
